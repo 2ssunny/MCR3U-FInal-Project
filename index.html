@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trigonometry MCR3U</title>
+  </head>
+  <body>
+    <div>
+      <input
+        type="text"
+        id="AInput"
+        placeholder="Enter 2*Amplitude of object"
+      />
+      <input type="text" id="dInput" placeholder="Enter d" />
+      <input type="text" id="PInput" placeholder="Enter P" />
+      <button onclick="calculate()">Calculate</button>
+      <p id="outputCosine"></p>
+      <p id="outputSine"></p>
+    </div>
+  </body>
+  <script>
+    function calculate() {
+      var a = parseFloat(parseInt(document.getElementById("AInput").value) / 2);
+      var d = document.getElementById("dInput").value;
+      var P = parseInt(document.getElementById("PInput").value);
+      var k = (360 / P).toString();
+      var outputCosine =
+        "f(x)=(" + a + ")(cos(" + k + "(x-" + d + ")))+" + a + "";
+      var d2 = parseInt(d) - parseInt(P / 4);
+      var outputSine =
+        "f(x) =(" + a + ")(sin(" + k + "(x-" + d2 + ")))+" + a + "";
+      document.getElementById("outputCosine").innerHTML = outputCosine;
+      document.getElementById("outputSine").innerHTML = outputSine;
+    }
+  </script>
+</html>
